@@ -1,6 +1,11 @@
 package com.my.algorithm.design.pattern.builder;
 
-
+/**
+ * Created by guokun on 2018/8/16.
+ * Description: java Builder模式
+ * @param
+ * @return
+ */
 public class MyBuilder {
     //必要参数
     private final int id;
@@ -66,6 +71,5 @@ public class MyBuilder {
         public MyBuilder build() {
             return new MyBuilder(this);
         }
-
     }
 }

@@ -1,7 +1,5 @@
 package com.my.algorithm;
 
-import java.util.jar.JarEntry;
-
 public class InsertSort {
     public void insertSort(int[] A) {
         for (int i = 1; i < A.length; i++) {

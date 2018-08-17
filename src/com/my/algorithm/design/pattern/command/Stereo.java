@@ -3,11 +3,11 @@ package com.my.algorithm.design.pattern.command;
 public class Stereo {
 
     public void stereoOn() {
-        System.out.println("stereoOn");
+        System.out.println("stereo On");
     }
 
     public void stereoOff() {
-        System.out.println("stereoOff");
+        System.out.println("stereo Off");
     }
 
     public void stereoWithCD() {
