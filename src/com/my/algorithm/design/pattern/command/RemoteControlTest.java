@@ -1,7 +1,7 @@
 package com.my.algorithm.design.pattern.command;
 
 /**
- * @Description: todo
+ * @Description: command设计模式
  * @author: guokun
  * @data: 2018/8/16
  */

@@ -1,9 +1,14 @@
 package com.my.concurrent;
 
+/**
+ * Created by guokun on 2018/8/17.
+ * Description: java指令重排
+ * @param
+ * @return
+ */
 public class NoVisibility {
     public boolean ready;
     public int number;
-
 
     private class ReaderThread extends Thread {
         public void run() {

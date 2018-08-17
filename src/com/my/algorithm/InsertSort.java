@@ -13,24 +13,13 @@ public class InsertSort {
         }
     }
 
-    public void test(String str) {
-        if (str == null) throw new NullPointerException("str is null");
-
-        System.out.println(str);
-    }
 
     public static void main(String[] args) {
-        System.out.println("main start");
         int[] A = new int[]{
                 1, 9, 5, 45, 0, -1, 58, 96
         };//1, 9, 5, 45, 0, -1, 58, 96
 
         InsertSort insertSort = new InsertSort();
-
-        insertSort.test("guokun");
-
         insertSort.insertSort(A);
-        System.out.println("main end");
-//        new Exception("hello").printStackTrace();
     }
 }
