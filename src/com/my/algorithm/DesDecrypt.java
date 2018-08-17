@@ -1,3 +1,5 @@
+package com.my.algorithm;
+
 import sun.misc.BASE64Decoder;
 
 import javax.crypto.Cipher;
@@ -6,7 +8,7 @@ import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.DESKeySpec;
 import java.security.SecureRandom;
 
-public class MyClass {
+public class DesDecrypt {
 
     private final static String DES = "DES";
 

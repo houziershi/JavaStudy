@@ -1,3 +1,5 @@
+package com.my.base;
+
 public class NameValue implements Comparable<NameValue> {
     private String name;
     private float tag;

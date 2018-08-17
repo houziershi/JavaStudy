@@ -1,3 +1,5 @@
+package com.guokun.http;
+
 import org.apache.commons.httpclient.DefaultHttpMethodRetryHandler;
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.HttpStatus;
@@ -14,7 +16,7 @@ import java.util.List;
 /**
  * Created by chengnp on 16-8-9.
  */
-public class HttpPrxoyClient {
+public class HttpProxyClient {
 
     /**
      * 代理服务器验证密码
@@ -46,7 +48,7 @@ public class HttpPrxoyClient {
      * @param proxyHost 代理服务器地址
      * @param proxyPort 代理服务器端口号
      */
-    public HttpPrxoyClient(String userName,String password, String proxyHost, int proxyPort) {
+    public HttpProxyClient(String userName, String password, String proxyHost, int proxyPort) {
         this.userName = userName;
         this.password = password;
         this.proxyHost = proxyHost;

@@ -1,7 +1,5 @@
 package com.my.leetcode;
 
-import com.my.algorithm.InsertSort;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;

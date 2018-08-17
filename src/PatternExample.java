@@ -7,7 +7,7 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class MyDemo {
+public class PatternExample {
     public static final int USERCENTER_REFRESH_ALL = 0x10000000;
     public static int SHOW_LOADING = 0x00000100;
     public static int READ_CACHE = 0x00000010;

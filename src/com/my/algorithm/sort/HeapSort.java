@@ -1,3 +1,5 @@
+package com.my.algorithm.sort;
+
 public class HeapSort {
     public void sort(int arr[])
     {
