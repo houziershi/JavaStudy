@@ -3,13 +3,14 @@ package com.my.base.threadLocaltip;
 import java.util.concurrent.CountDownLatch;
 
 /**
- * @Description: todo
+ * @Description: http://www.jasongj.com/java/threadlocal/
  * @author: guokun
  * @data: 2018/8/29
  */
 public class ThreadLocalDemo {
     public static void main(String[] args) throws InterruptedException {
         int threads = 3;
+        System.out.println("<main> ----------------- start");
         CountDownLatch countDownLatch = new CountDownLatch(threads);
         InnerClass innerClass = new InnerClass();
         for (int i = 1; i <= threads; i++) {
@@ -22,7 +23,9 @@ public class ThreadLocalDemo {
                 countDownLatch.countDown();
             }, "thread - " + i).start();
         }
+        System.out.println("<main> ------------------ doing");
         countDownLatch.await();
+        System.out.println("<main> ---------------------- end");
     }
 
     private static class InnerClass {
