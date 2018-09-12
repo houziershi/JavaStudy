@@ -1,7 +1,3 @@
-import com.google.gson.Gson;
-import org.w3c.dom.ls.LSInput;
-
-import java.time.Year;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -119,7 +115,10 @@ public class MyStringDemo {
         String[] strings = new String[]{"12","110"};
         System.out.println(gson.toJson(strings));*/
 
-       MyStringDemo myStringDemo = new MyStringDemo();
-       myStringDemo.methodB(0,0);
+     /*  MyStringDemo myStringDemo = new MyStringDemo();
+       myStringDemo.methodB(0,0);*/
+     String a = "11;12";
+     String[] b =  a.split(";");
+     System.out.println(b.length);
     }
 }
