@@ -1,9 +1,10 @@
 package com.my.algorithm.design.pattern.intercept;
+/**Created by guokun on 2018/12/4.
+ * Description: 模仿OkHttp Interceptor 责任链设计模式 */
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
 public final class MyInterceptorChain implements Interceptor.Chain{
     private final List<Interceptor> interceptors;
     private final MyRequest myRequest;
@@ -17,6 +18,7 @@ public final class MyInterceptorChain implements Interceptor.Chain{
     }
 
     public static void main(String[] args) {
+
         OneInterceptor oneInterceptor = new OneInterceptor("one Request", "one response");
         TwoInterceptor twoInterceptor = new TwoInterceptor("two request", "two response");
         ThreeInterceptor threeInterceptor = new ThreeInterceptor("three request", " three response");
