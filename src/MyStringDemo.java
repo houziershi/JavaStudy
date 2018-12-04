@@ -120,5 +120,11 @@ public class MyStringDemo {
      String a = "11;12";
      String[] b =  a.split(";");
      System.out.println(b.length);
+
+     String  uri = "https://enaudio.ating.info/BSKdX6qT3NaY5gCd7lqObWINEzw=/lr_E-RD5nDZ-Unt8PVyzRVCANhN2?sign=7bf489a3cb3f0454d8183c75286aa954&t=5b9c8385";
+     String  uri2 = "https://enaudio.ating.info/BSKdX6qT3NaY5gCd7lqObWINEzw=/lr_E-RD5nDZ-Unt8PVyzRVCANhN2";
+
+     System.out.println(uri2.substring(0, uri2.indexOf("?")));
+
     }
 }
