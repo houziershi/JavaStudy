@@ -1,18 +1,28 @@
 package dimens.utils;
 
 
+import dimens.constants.DimenTypes;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.math.BigDecimal;
 
-import dimens.constants.DimenTypes;
-
 
 
 public class MakeUtils {
+    public static  String str = "afdaf";
 
+    /**Created by guokun on 2018/12/18.
+     * Description: static静态块*/
+    static {
+        System.out.println("make utils block");
+    }
+
+    public static void mainTest() {
+        System.out.println("main test");
+    }
     private static final String XML_HEADER = "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n";
     private static final String XML_RESOURCE_START = "<resources>\r\n";
     private static final String XML_RESOURCE_END = "</resources>\r\n";

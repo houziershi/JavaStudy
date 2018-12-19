@@ -2,9 +2,13 @@ package com.my.algorithm.design.pattern.intercept;
 /**Created by guokun on 2018/12/4.
  * Description: 模仿OkHttp Interceptor 责任链设计模式 */
 
+import com.google.common.util.concurrent.ThreadFactoryBuilder;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.*;
+
 public final class MyInterceptorChain implements Interceptor.Chain{
     private final List<Interceptor> interceptors;
     private final MyRequest myRequest;
@@ -19,6 +23,21 @@ public final class MyInterceptorChain implements Interceptor.Chain{
 
     public static void main(String[] args) {
 
+        MyClass myClass = new MyClass();
+
+        ThreadFactory threadFactory = new ThreadFactoryBuilder().setNameFormat("demo-pool-%d").build();
+        ExecutorService executorService = new ThreadPoolExecutor(5, 10, 0L, TimeUnit.MILLISECONDS,
+                new LinkedBlockingDeque<Runnable>(1024), threadFactory,new ThreadPoolExecutor.AbortPolicy());
+
+        executorService.execute(()->{try {
+            myClass.myThrowMethod();
+        }catch (Exception e) {
+            System.out.println("my exception=========="+e);
+        }});
+        executorService.shutdown();
+
+//        testThrowMethod();
+        System.out.println("main enter");
         OneInterceptor oneInterceptor = new OneInterceptor("one Request", "one response");
         TwoInterceptor twoInterceptor = new TwoInterceptor("two request", "two response");
         ThreeInterceptor threeInterceptor = new ThreeInterceptor("three request", " three response");
@@ -34,6 +53,10 @@ public final class MyInterceptorChain implements Interceptor.Chain{
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public static void testThrowMethod() {
+        throw new NullPointerException();
     }
 
     @Override

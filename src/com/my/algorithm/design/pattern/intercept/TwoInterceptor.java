@@ -18,8 +18,19 @@ public final class TwoInterceptor implements Interceptor {
         System.out.println("two interceptor-----------request======="+myRequest.getRequestdiscription());
 
         MyResponse myResponse = chain.proceed(myRequest);
-        myResponse.setResponseDiscription(twoResponse);
+//        MyResponse myResponse = testFor(null, chain);
         System.out.println("two interceptor---------response==="+myResponse.getResponseDiscription());
         return myResponse;
+    }
+
+    private MyResponse testFor(MyResponse myResponse, Chain chain) throws IOException {
+        MyRequest myRequest = chain.request();
+        MyResponse response = null;
+        for (int i=0;i<2;i++) {
+            MyRequest myRequest1 = new MyRequest(myRequest+"----"+i+"    "+myRequest.getRequestdiscription());
+            response = chain.proceed(myRequest1);
+        }
+
+        return response;
     }
 }

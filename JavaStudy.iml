@@ -70,5 +70,7 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="com.google.guava:guava:27.0.1-jre" level="project" />
+    <orderEntry type="library" name="com.hynnet:commons-lang3:3.4" level="project" />
   </component>
 </module>
