@@ -1,8 +1,9 @@
 package com.my.concurrent.executorservice;
 
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
-import org.apache.commons.lang3.concurrent.BasicThreadFactory;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.concurrent.*;
 
 /**
@@ -10,6 +11,7 @@ import java.util.concurrent.*;
  * Description: executorservice 使用范例
  */
 public class Tutorial {
+    private static SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
     /**
      * Created by guokun on 2018/12/14.
@@ -33,12 +35,21 @@ public class Tutorial {
      * @return
      */
     public static void createTimer(Runnable runnable, long initialDelay, long period) {
-        ScheduledExecutorService executorService = new ScheduledThreadPoolExecutor(1,
-                new BasicThreadFactory.Builder().namingPattern("example-schedule-pool-%d").daemon(true).build());
-        executorService.scheduleAtFixedRate(runnable, initialDelay, period, TimeUnit.HOURS);
+        /*ScheduledExecutorService executorService = new ScheduledThreadPoolExecutor(1,
+                new BasicThreadFactory.Builder().namingPattern("example-schedule-pool-%d").daemon(true).build());*/
+        ScheduledExecutorService executorService = new ScheduledThreadPoolExecutor(1);
+        executorService.scheduleAtFixedRate(runnable, initialDelay, period, TimeUnit.MILLISECONDS);
     }
 
     public static void main(String[] args) {
 
+        singleThread(() ->
+                System.out.println("single thread========" + Thread.currentThread().getName()));
+
+
+        createTimer(() ->
+                        System.out.println("timer thread ========" + Thread.currentThread().getName() + "" +
+                                "time ========" + format.format(new Date()))
+                , 1000, 5000);
     }
 }
